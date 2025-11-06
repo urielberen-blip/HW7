@@ -10,28 +10,37 @@ bool morePositivesThanNegatives(const int arr[], int size) {
             positives++;
         else if (arr[i] < 0)
             negatives++;
-  
+        // zeros are ignored
     }
 
     return positives > negatives;
 }
 
 int main() {
-    int numbers1[] = {3, -1, 5, 0, -2, 8};
-    int size1 = sizeof(numbers1) / sizeof(numbers1[0]);
-
-    if (morePositivesThanNegatives(numbers1, size1))
-        cout << "Array 1 has more positive numbers than negatives.\n";
+    int test1[] = {3, -2, 4, -1, 0, 6, 8, -9, 5, 2};
+    int size1 = sizeof(test1) / sizeof(test1[0]);
+    cout << "Test 1: ";
+    if (morePositivesThanNegatives(test1, size1))
+        cout << "More positives than negatives.\n";
     else
-        cout << "Array 1 does NOT have more positive numbers than negatives.\n";
+        cout << "Not more positives than negatives.\n";
 
-    int numbers2[] = {-5, -3, 0, -1, 2};
-    int size2 = sizeof(numbers2) / sizeof(numbers2[0]);
-
-    if (morePositivesThanNegatives(numbers2, size2))
-        cout << "Array 2 has more positive numbers than negatives.\n";
+    int test2[] = {-3, -1, -7, 0, 2, -4, -6, -2, -9, -5};
+    int size2 = sizeof(test2) / sizeof(test2[0]);
+    cout << "Test 2: ";
+    if (morePositivesThanNegatives(test2, size2))
+        cout << "More positives than negatives.\n";
     else
-        cout << "Array 2 does NOT have more positive numbers than negatives.\n";
+        cout << "Not more positives than negatives.\n";
+
+    int test3[] = {0, 1, -1, 2, -2, 3, -3, 4, -4, 5};
+    int size3 = sizeof(test3) / sizeof(test3[0]);
+    cout << "Test 3: ";
+    if (morePositivesThanNegatives(test3, size3))
+        cout << "More positives than negatives.\n";
+    else
+        cout << "Not more positives than negatives.\n";
 
     return 0;
 }
+
